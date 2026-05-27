@@ -1,0 +1,24 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Node
+node_modules/
+npm-debug.log*
+package-lock.json
+
+# SCSS source (compiled CSS is tracked)
+# axima/assets/scss/  <-- keep tracked for dev
+
+# Temp / logs
+*.log
+*.tmp
+*.swp
+
+# Secrets
+.env
+.env.local
