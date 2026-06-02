@@ -22,4 +22,16 @@ package-lock.json
 # Secrets
 .env
 .env.local
-.vercel
+
+# Large media files (keep bahlapingassets but not videos)
+*.mp4
+*.mov
+*.webm
+*.webp
+*.mp3
+
+# Keep bahlapingassets folder EXCEPT videos
+!axima/assets/images/bahlapingassets/
+axima/assets/images/bahlapingassets/*.mp4
+axima/assets/images/bahlapingassets/*.mov
+axima/assets/images/bahlapingassets/*.webm
