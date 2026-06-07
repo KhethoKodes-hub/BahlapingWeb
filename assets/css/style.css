@@ -2548,7 +2548,10 @@ textarea.form-control {
   padding: 0 20px;
   height: 100px;
   line-height: 100px;
-  background-color: #ff5e14;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
 }
 
 .navbar .logo-dark {
@@ -2808,6 +2811,7 @@ textarea.form-control {
 .fixed-navbar>.container-fluid {
   position: relative;
   height: 90px;
+  overflow: hidden;
 }
 
 .fixed-navbar .nav__item .nav__item-link {
