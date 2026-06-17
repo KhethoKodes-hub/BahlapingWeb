@@ -12,6 +12,66 @@
     href="https://fonts.googleapis.com/css?family=Heebo:400,500,700%7cRajdhani:400,500,600,700&display=swap">
   <link rel="stylesheet" href="assets/css/libraries.css">
   <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* fix hero images: bring them down so heads aren't cropped */
+    .slider-1 .slide-item .bg-img img {
+      object-position: center 65% !important;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* video banner: play inside container, no popup */
+    .video-banner-layout2 .bg-img {
+      position: relative;
+      overflow: hidden;
+      min-height: 400px;
+    }
+    .video-banner-layout2 .bg-img video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+    .video-banner-layout2 .bg-overlay::after {
+      z-index: 1;
+    }
+    .video-banner-layout2 .container {
+      position: relative;
+      z-index: 2;
+    }
+    .video-banner-layout2 .popup-video {
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .video__btn {
+      position: relative;
+      z-index: 3;
+    }
+    .video-banner-layout2 .bg-overlay::after {
+      pointer-events: none;
+    }
+    .video-banner-layout2 .bg-img video {
+      pointer-events: none;
+    }
+    /* ensure video banner has height */
+    .video-banner-layout2 {
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+    }
+    .video-banner-layout2 .bg-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
 </head>
 
 <body>
@@ -35,31 +95,13 @@
             <ul class="navbar-nav mx-auto">
               <li class="nav__item with-dropdown">
                 <a href="index.html" class=" nav__item-link active">Home</a>
-                <!--<i class="fa fa-angle-right" data-toggle="dropdown"></i>-->
-                <!--<ul class="dropdown-menu">-->
-                  <!--<li class="nav__item"><a href="index.html" class="nav__item-link">Home Main</a></li>-->
-                  <!-- /.nav-item -->
-                  <!--<li class="nav__item"><a href="home-classic.html" class="nav__item-link">Home Classic</a></li>-->
-                  <!-- /.nav-item -->
-                <!--</ul>!-- /.dropdown-menu -->
               </li><!-- /.nav-item -->
               <li class="nav__item with-dropdown">
                 <a href="about-us.html" class="dropdown-toggle nav__item-link">Company</a>
                 <i class="fa fa-angle-right" data-toggle="dropdown"></i>
                 <ul class="dropdown-menu">
                   <li class="nav__item"><a href="about-us.html" class="nav__item-link">About Us</a></li>
-                  <!-- /.nav-item -->
                   <li class="nav__item"><a href="why-us.html" class="nav__item-link">Why Choose Us</a></li>
-                  <!-- /.nav-item -->
-                  <!--<li class="nav__item"><a href="leadership-team.html" class="nav__item-link">Leadership Team</a></li>-->
-                  <!-- /.nav-item -->
-                  <!--<li class="nav__item"><a href="awards.html" class="nav__item-link">Award &amp; Recognition</a>
-                  </li>-->
-                  <!-- /.nav-item -->
-                  <!--<li class="nav__item"><a href="faqs.html" class="nav__item-link">Help &amp; FAQs</a></li>-->
-                  <!-- /.nav-item -->
-                  <!--<li class="nav__item"><a href="careers.html" class="nav__item-link">Careers</a></li>-->
-                  <!-- /.nav-item -->
                 </ul><!-- /.dropdown-menu -->
               </li><!-- /.nav-item -->
               <li class="nav__item with-dropdown">
@@ -107,27 +149,6 @@
                   </li><!-- /.nav-item -->
                 </ul><!-- /.dropdown-menu -->
               </li><!-- /.nav-item -->
-              <!--<li class="nav__item with-dropdown">
-                <a href="case-studies-grid.html" class="dropdown-toggle nav__item-link">Projects</a>
-                <i class="fa fa-angle-right" data-toggle="dropdown"></i>-->
-                <ul class="dropdown-menu">
-                  <li class="nav__item"><a href="case-studies-grid.html" class="nav__item-link">Projects Grid</a>
-                  </li><!-- /.nav-item -->
-                  <li class="nav__item"><a href="case-studies-classic.html" class="nav__item-link">Projects Classic</a></li><!-- /.nav-item -->
-                  <li class="nav__item"><a href="case-studies-single.html" class="nav__item-link">Single Project</a>
-                  </li><!-- /.nav-item -->
-                </ul><!-- /.dropdown-menu -->
-              </li><!-- /.nav-item -->
-              <!--<li class="nav__item with-dropdown">
-                <a href="blog.html" class="dropdown-toggle nav__item-link">News</a>
-                <i class="fa fa-angle-right" data-toggle="dropdown"></i>-->
-                <ul class="dropdown-menu">
-                  <li class="nav__item"><a href="news.html" class="nav__item-link">Our Blog</a></li>
-                  <!-- /.nav-item -->
-                  <li class="nav__item"><a href="news-single-post.html" class="nav__item-link">Single Blog Post</a></li>
-                  <!-- /.nav-item -->
-                </ul><!-- /.dropdown-menu -->
-              </li><!-- /.nav-item -->
               <li class="nav__item">
                 <a href="contacs.html" class="nav__item-link">Contact Us</a>
               </li><!-- /.nav-item -->
@@ -136,31 +157,7 @@
           <div class="navbar-modules">
             <ul class="list-unstyled d-flex align-items-center modules__btns-list">
               <li>
-                <!--<div class="dropdown dropdown__lang">
-                  <button class="dropdown-toggle" id="langDrobdown" data-toggle="dropdown">
-                    <img src="assets/images/flags/en.png" alt="en"><span>English</span>
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="langDrobdown">
-                    <a class="dropdown-item" href="#">
-                      <img src="assets/images/flags/fr.png" alt="fr"><span>France</span>
-                    </a>
-                    <a class="dropdown-item" href="#">
-                      <img src="assets/images/flags/gr.png" alt="gr"><span>Germany</span>
-                    </a>
-                  </div>
-                </div>
               </li>
-              <li class="d-none d-lg-block">
-                <a href="request-quote.html" class="btn btn__secondary module__btn-request">
-                  <span>Request A Quote</span><i class="icon-arrow-right"></i>
-                </a>
-              </li>-->
-              <!--<li class="d-none d-lg-block">
-                <form class="header__search-form">
-                  <input type="text" class="search__input" placeholder="Search...">
-                  <button><i class="fa fa-search"></i></button>
-                </form>
-              </li>-->
             </ul><!-- /.modules-wrapper -->
           </div><!-- /.navbar-modules -->
         </div><!-- /.container -->
@@ -175,14 +172,12 @@
         data-slide-sm="1" data-autoplay="false" data-nav="true" data-dots="true" data-space="0" data-loop="true"
         data-speed="3000" data-transition="fade" data-animate-out="fadeOut" data-animate-in="fadeIn">
         <div class="slide-item align-v-h bg-overlay bg-overlay-3">
-          <div class="bg-img"><img src="assets/images/bahlapingassets/team_photo19.jpg" alt="Bahlaping Mash Team"></div>
+          <div class="bg-img"><img src="assets/images/bahlapingassets/team_photo19.jpg" alt="Bahlaping Mash Team" style="object-position: center 65%; width:100%; height:100%; object-fit:cover;"></div>
           <div class="container">
             <div class="row">
               <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8">
                 <div class="slide__content">
-                  <!--<span class="slide__subtitle">9+ Years of Excellence in Mining, Engineering &amp; Construction.</span>-->
                   <h2 class="slide__title">Turning Your Vision Into Tangible Results!</h2>
-                  <!--<p class="slide__desc">Bahlaping Mash is a BBBEE Level 1 black woman-owned company delivering world-class mining, electrical, and mechanical engineering solutions across Southern Africa.</p>-->
                   <a href="#" class="btn btn__primary mr-30">More About Us</a>
                   <a href="#" class="btn btn__white">Our Services</a>
                 </div><!-- /.slide-content -->
@@ -191,12 +186,11 @@
           </div><!-- /.container -->
         </div><!-- /.slide-item -->
         <div class="slide-item align-v-h bg-overlay bg-overlay-3">
-          <div class="bg-img"><img src="assets/images/bahlapingassets/team_photo18.jpg" alt="Bahlaping Mash Team"></div>
+          <div class="bg-img"><img src="assets/images/bahlapingassets/team_photo18.jpg" alt="Bahlaping Mash Team" style="object-position: center 65%; width:100%; height:100%; object-fit:cover;"></div>
           <div class="container">
             <div class="row">
               <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8">
                 <div class="slide__content">
-                  <!--<span class="slide__subtitle">A Distinguished Black Woman-Owned BBBEE Level 1 Enterprise!</span>-->
                   <h2 class="slide__title">Pioneering Mining &amp; Engineering Across Southern Africa</h2>
                   <p class="slide__desc">From cable pit reticulation to chrome export, civil construction to mechanical engineering — we deliver comprehensive solutions that bridge the gender gap in industry.</p>
                   <a href="#" class="btn btn__white mr-30">Our Services</a>
@@ -207,12 +201,11 @@
           </div><!-- /.container -->
         </div><!-- /.slide-item -->
         <div class="slide-item align-v-h bg-overlay bg-overlay-3">
-          <div class="bg-img"><img src="assets/images/bahlapingassets/team_photo20.jpg" alt="Bahlaping Mash Team"></div>
+          <div class="bg-img"><img src="assets/images/bahlapingassets/team_photo20.jpg" alt="Bahlaping Mash Team" style="object-position: center 65%; width:100%; height:100%; object-fit:cover;"></div>
           <div class="container">
             <div class="row">
               <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8">
                 <div class="slide__content">
-                  <!--<span class="slide__subtitle">Registered ARIBA &amp; COUPA Supplier — Associate of De Beers, Kumba Iron Ore &amp; Anglo American!</span>-->
                   <h2 class="slide__title">Innovation, Sustainability &amp; Community Empowerment</h2>
                   <p class="slide__desc">We believe in fostering strong partnerships, building sustainable infrastructures, and shaping the future through persistent innovation and dedication.</p>
                   <a href="about-us.html" class="btn btn__primary btn__hover2 mr-30">More About Us</a>
@@ -291,10 +284,13 @@
           <div class="col-sm-12 col-md-12 col-lg-12">
             <div class="d-flex align-items-center justify-content-center flex-wrap" style="gap: 80px; padding: 40px 0;">
               <div class="client" style="flex: 0 0 auto;">
-                <a href="#"><img src="assets/images/bahlapingassets/debeerslogo.jpg" alt="De Beers Group" style="max-height: 100px; max-width: 240px; object-fit: contain;"></a>
+                <a href="#"><img src="assets/images/bahlapingassets/kumbalogo2.png" alt="De Beers Group" style="max-height: 100px; max-width: 240px; object-fit: contain;"></a>
               </div>
               <div class="client" style="flex: 0 0 auto;">
-                <a href="#"><img src="assets/images/bahlapingassets/kumbalogo2.png" alt="Kumba Iron Ore" style="max-height: 100px; max-width: 240px; object-fit: contain;"></a>
+                <a href="#"><img src="assets/images/bahlapingassets/debeerslogo.jpg" alt="Kumba Iron Ore" style="max-height: 100px; max-width: 240px; object-fit: contain;"></a>
+              </div>
+               <div class="client" style="flex: 0 0 auto;">
+                <a href="#"><img src="assets/images/bahlapingassets/exxarologo.png" alt="Anglo American" style="max-height: 100px; max-width: 240px; object-fit: contain;"></a>
               </div>
               <div class="client" style="flex: 0 0 auto;">
                 <a href="#"><img src="assets/images/bahlapingassets/anglologo.jpeg" alt="Anglo American" style="max-height: 100px; max-width: 240px; object-fit: contain;"></a>
@@ -371,7 +367,6 @@
       <div class="container">
         <div class="row heading mb-40">
           <div class="col-sm-12 col-md-12 col-lg-6">
-            <!--<span class="heading__subtitle">9+ Years Serving the Mining &amp; Engineering Sector in Southern Africa.</span>-->
             <h2 class="heading__title">High-Performance Services Across Mining, Electrical, Civil &amp; Mechanical Engineering!</h2>
           </div><!-- /.col-lg-6 -->
           <div class="col-sm-12 col-md-12 col-lg-6">
@@ -379,13 +374,6 @@
             <div class="d-flex">
               <a href="Industries-industry-served.html" class="btn btn__primary mt-30 mr-30">Our Services</a>
               <div class="contact-chip mt-30">
-                <!--<div class="contact__chip-img">
-                  <img src="assets/images/bahlapingassets/bahlaping8.jpeg" alt="avatar">
-                </div>/.contact__chip-ig 
-                <div class="contact__chip-info">
-                  <h6>+27 60 877 5153</h6>
-                  <span>Sharon Mashishi — Director</span>
-                </div> /.contact__chip-info -->
               </div><!-- /.contact-chip -->
             </div>
           </div><!-- /.col-lg-6 -->
@@ -480,118 +468,30 @@
   <!-- =====================
        video Banner
     ======================== -->
-  <section id="videoBanner" class="video-banner video-banner-layout2 bg-overlay">
-    <div class="bg-img"><img src="assets/images/bahlapingassets/bmvidIMG.png" alt="background"></div>
-    <div class="container">
+  <section id="videoBanner" class="video-banner video-banner-layout2 bg-overlay" style="min-height:500px; display:flex; align-items:center; position:relative;">
+    <div class="bg-img" style="position:absolute; top:0; left:0; width:100%; height:100%;">
+      <video id="bgVideo" muted playsinline preload="metadata" loop style="width:100%; height:100%; object-fit:cover; z-index:0; position:absolute; top:0; left:0;">
+        <source src="assets/images/bahlapingassets/bmvid.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <img src="assets/images/bahlapingassets/bmvidIMG.png" alt="background" style="width:100%; height:100%; object-fit:cover; display:none;">
+    </div>
+    <div class="container" style="position:relative; z-index:2;">
       <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-12">
           <div class="video__btn text-center">
-            <a class="popup-video" href="assets/images/bahlapingassets/bmvid.mp4">
+            <a class="popup-video" href="#" id="videoLink" style="cursor:pointer; text-decoration:none; display:inline-block;">
               <span class="video__player-animation"></span>
               <span class="video__player-animation video__player-animation-2"></span>
-              <div class="video__player">
+              <div class="video__player" id="videoPlayBtn" style="cursor:pointer;">
                 <i class="fa fa-play"></i>
               </div>
             </a>
           </div><!-- /.video__btn -->
         </div><!-- /.col-lg-12 -->
       </div><!-- /.row -->
-    </div><!-- /.container -->
+    </div>
   </section><!-- /.videoBanner -->
-
-  <!-- =====================
-       portfolio Carousel
-    ======================== 
-  <section id="portfolioCarousel" class="portfolio-carousel portfolio-classic pt-90 pb-70">
-    <div class="container">
-      <div class="row mb-50">
-        <div class="col-sm-12 col-md-12 col-lg-7">
-          <div class="heading">
-            <span class="heading__subtitle">We Work Across Southern Africa &amp; Beyond!</span>
-            <h3 class="heading__title mb-0">Featured Projects</h3>
-          </div>
-        </div><
-        <div class="col-sm-12 col-md-12 col-lg-5">
-          <div class="cta__banner">
-            <div class="bg-img"><img src="assets/images/backgrounds/pattern/1.jpg" alt="background"></div>
-            <h5 class="cta__title">Dedicated Project Teams &amp; Agile Delivery</h5>
-            <p class="cta__desc">Building lasting relationships and projects that endure. Serving a growing list of long-term clients with expertise across mining and engineering in Southern Africa.</p>
-            <a href="#" class="btn btn__white btn__link">
-              <i class="icon-arrow-right arrow-rounded arrow-rounded-white"></i>
-              <span>View Our Projects</span>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-12 col-md-12 col-lg-12">
-          <div class="carousel owl-carousel carousel-arrows" data-slide="3" data-slide-md="2" data-slide-sm="1"
-            data-autoplay="true" data-nav="true" data-dots="false" data-space="30" data-loop="true" data-speed="800">
-            <div class="portfolio-item">
-              <div class="portfolio__img">
-                <img src="assets/images/case-studies/grid/1.jpg" alt="portfolio img">
-                <a href="#" class="view__icon">View</a>
-              </div>/
-              <div class="portfolio__content">
-                <h4 class="portfolio__title"><a href="#">Open Pit Cable Reticulation — Limpopo</a></h4>
-                <div class="portfolio__cat">
-                  <a href="#">Electrical</a><a href="#">Mining</a>
-                </div>
-              </div>
-            </div>
-            <div class="portfolio-item">
-              <div class="portfolio__img">
-                <img src="assets/images/case-studies/grid/2.jpg" alt="portfolio img">
-                <a href="#" class="view__icon">View</a>
-              </div>
-              <div class="portfolio__content">
-                <h4 class="portfolio__title"><a href="#">Residential Housing Construction — Mapela</a></h4>
-                <div class="portfolio__cat">
-                  <a href="#">Construction</a><a href="#">Civil</a>
-                </div>
-              </div>
-            </div>
-            <div class="portfolio-item">
-              <div class="portfolio__img">
-                <img src="assets/images/case-studies/grid/3.jpg" alt="portfolio img">
-                <a href="#" class="view__icon">View</a>
-              </div>
-              <div class="portfolio__content">
-                <h4 class="portfolio__title"><a href="#">Chrome Spiral Wash Plant — Zimbabwe</a></h4>
-                <div class="portfolio__cat">
-                  <a href="#">Mining</a><a href="#">Chrome</a>
-                </div>
-              </div>
-            </div>
-            <div class="portfolio-item">
-              <div class="portfolio__img">
-                <img src="assets/images/case-studies/grid/4.jpg" alt="portfolio img">
-                <a href="#" class="view__icon">View</a>
-              </div>
-              <div class="portfolio__content">
-                <h4 class="portfolio__title"><a href="#">Road Maintenance &amp; Rehabilitation — North West</a></h4>
-                <div class="portfolio__cat">
-                  <a href="#">Civil</a><a href="#">Roads</a>
-                </div><
-              </div>
-            </div>
-            <div class="portfolio-item">
-              <div class="portfolio__img">
-                <img src="assets/images/case-studies/grid/5.jpg" alt="portfolio img">
-                <a href="#" class="view__icon">View</a>
-              </div><!-- /.portfolio-img -->
-              <div class="portfolio__content">
-                <h4 class="portfolio__title"><a href="#"></a></h4>
-                <div class="portfolio__cat">
-                  <a href="#"></a><a href="#"></a><BR><BR><BR>
-                </div><!-- /.portfolio-cat -->
-              </div><!-- /.portfolio-content -->
-            </div><!-- /.portfolio-item -->
-          </div><!-- /.carousel -->
-        </div><!-- /.col-lg-12 -->
-      </div><!-- /.row -->
-    </div><!-- /.container -->
-  </section><!-- .portfolio-carousel -->
 
   <!-- ========================
       About layout 1
@@ -622,210 +522,6 @@
     </div><!-- /.container -->
   </section><!-- /.About layout 1 -->
 
-  <!-- =========================
-           Banner 2
-     =========================== 
-  <section id="banner2" class="banner banner-2 bg-overlay bg-overlay-theme-2 bg-parallax pt-120 pb-0">
-    <div class="bg-img"><img src="assets/images/banners/3.jpg" alt="background"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12 col-md-12 col-lg-7">
-          <form class="contact__form-panel mr-50">
-            <div class="row">
-              <div class="col-sm-12 contact__form-panel-header">
-                <h4>Get In Touch</h4>
-                <p>We are committed to delivering innovative and quality solutions. Reach out to us and let's discuss how Bahlaping Mash can serve your needs.</p>
-              </div>
-              <div class="col-sm-6 col-md-6 col-lg-6">
-                <div class="form-group"><input type="text" class="form-control" placeholder="Name"></div>
-              </div>
-              <div class="col-sm-6 col-md-6 col-lg-6">
-                <div class="form-group"><input type="email" class="form-control" placeholder="Email"></div>
-              </div>
-              <div class="col-sm-6 col-md-6 col-lg-6">
-                <div class="form-group"><input type="text" class="form-control" placeholder="Phone"></div>
-              </div>
-              <div class="col-sm-6 col-md-6 col-lg-6">
-                <div class="form-group form-group-select">
-                  <select class="form-control">
-                    <option>Select Your Industry</option>
-                    <option>Mining &amp; Extraction</option>
-                    <option>Civil &amp; Construction</option>
-                    <option>Electrical Engineering</option>
-                    <option>Mechanical Engineering</option>
-                    <option>Chrome Export &amp; Import</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-sm-12 col-md-12 col-lg-12">
-                <div class="form-group">
-                  <textarea class="form-control" placeholder="Additional Details!"></textarea>
-                </div>
-              </div>
-              <div class="col-sm-12 col-md-12 col-lg-12">
-                <button type="submit" class="btn btn__primary btn__block">Submit Request</button>
-              </div>
-            </div>
-          </form>
-        </div>
-        <div class="col-sm-12 col-md-12 col-lg-5">
-          <div class="testimonials testimonials-white">
-            <h6 class="testimonials__heading color-white">Testimonials</h6>
-            <div class="carousel owl-carousel carousel-arrows" data-slide="1" data-slide-md="1" data-slide-sm="1"
-              data-autoplay="true" data-nav="true" data-dots="false" data-space="0" data-loop="true" data-speed="800">
-              <div class=" testimonial-item">
-                <div class="testimonial__content">
-                  <p class="testimonial__desc">Working with Bahlaping Mash has been an exceptional experience. Their commitment to quality, safety, and delivering on time makes them a trusted partner in the mining sector. Truly a standout black woman-owned enterprise.</p>
-                <div class="testimonial__meta">
-                  <div class="testimonial__thumb">
-                    <img src="assets/images/testimonials/thumbs/1.png" alt="author thumb" class="img-fluid">
-                  <h5 class="testimonial__meta-title">Project Manager</h5>
-                  <p class="testimonial__meta-desc">De Beers Group</p>
-                </div>
-              </div>
-              <div class=" testimonial-item">
-                <div class="testimonial__content">
-                  <p class="testimonial__desc">Bahlaping Mash consistently delivers superior electrical reticulation work in our open pit operations. Their 4-shift system ensures continuity and minimal disruption — a highly professional and capable team.</p>
-                </div>
-                <div class="testimonial__meta">
-                  <div class="testimonial__thumb">
-                    <img src="assets/images/testimonials/thumbs/1.png" alt="author thumb" class="img-fluid">
-                  </div>
-                  <h5 class="testimonial__meta-title">Site Engineer</h5>
-                  <p class="testimonial__meta-desc">Kumba Iron Ore</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>--><!-- /. Banner 2 -->
-
-  <!-- =========================
-           contact Info
-     ===========================
-  <section id="contactInfo" class="contact-info pt-40 pb-20">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12 col-md-12 col-lg-7">
-          <strong class="text-center d-block mt-50 mb-20">We will get back to you within 24 hours.</strong>
-        </div>
-        <div class="col-sm-12 col-md-12 col-lg-5">
-          <div class="row">
-            <div class="col-sm-6 col-md-6 col-lg-12 col-xl-6">
-              <div class="contact__info-box">
-                <div class="contact__info-box-icon">
-                  <i class="icon-phone"></i>
-                </div>
-                <div class="contact__info-box-text">
-                  <span>Call Us:</span>
-                  <strong><a href="tel:+27608775153">+27 60 877 5153</a></strong>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-6 col-lg-12 col-xl-6">
-              <div class="contact__info-box">
-                <div class="contact__info-box-icon">
-                  <i class="icon-envelope"></i>
-                </div>
-                <div class="contact__info-box-text">
-                  <span>Email Us:</span>
-                  <strong><a href="mailto:sharon.mashishi@bahlapingmash.com">sharon.mashishi@bahlapingmash.com</a></strong>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>--><!-- /. contact Info -->
-
-  <!-- ======================
-      Blog Grid
-    ========================= 
-  <section id="blogGrid" class="blog blog-grid pt-120 pb-70">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12 col-md-12 col-lg-6 offset-lg-3">
-          <div class="heading text-center mb-50">
-            <span class="heading__subtitle">Latest News &amp; Media Appearances</span>
-            <h2 class="heading__title">Insights &amp; Trends</h2>
-            <p class="heading__desc">Follow our latest news and media appearances — from eNCA and Business Report to Radio 2000 and Thobela FM, Bahlaping Mash is making an impact.</p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-12 col-md-6 col-lg-4">
-          <div class="blog-item">
-            <div class="blog__img">
-              <a href="#">
-                <img src="assets/images/blog/grid/1.jpg" alt="blog image">
-              </a>
-            </div>
-            <div class="blog__content">
-              <div class="blog__meta">
-                <div class="blog__meta-cat">
-                  <a href="#">Mining</a><a href="#">Women in Business</a>
-                </div>
-                <span class="blog__meta-date">eNCA Feature</span>
-              </div>
-              <h4 class="blog__title"><a href="#">From a R2,000 salary to employing 86 people — Sharon Mashishi's inspiring journey</a></h4>
-              <a href="#" class="btn btn__secondary btn__link">
-                <i class="icon-arrow-right arrow-rounded"></i>
-                <span>Read More</span>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4">
-          <div class="blog-item">
-            <div class="blog__img">
-              <a href="#">
-                <img src="assets/images/blog/grid/2.jpg" alt="blog image">
-              </a>
-            </div>
-            <div class="blog__content">
-              <div class="blog__meta">
-                <div class="blog__meta-cat">
-                  <a href="#">Business</a><a href="#">Construction</a>
-                </div>
-                <span class="blog__meta-date">Business Report</span>
-              </div>
-              <h4 class="blog__title"><a href="#">Bahlaping Mash — Challenging norms in the male-dominated mining and engineering sector</a></h4>
-              <a href="#" class="btn btn__secondary btn__link">
-                <i class="icon-arrow-right arrow-rounded"></i>
-                <span>Read More</span>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4">
-          <div class="blog-item">
-            <div class="blog__img">
-              <a href="#">
-                <img src="assets/images/blog/grid/3.jpg" alt="blog image">
-              </a>
-            </div>
-            <div class="blog__content">
-              <div class="blog__meta">
-                <div class="blog__meta-cat">
-                  <a href="#">BBBEE</a><a href="#">Empowerment</a>
-                </div>
-                <span class="blog__meta-date">IOL News</span>
-              </div>
-              <h4 class="blog__title"><a href="#">Her parents encouraged her to register a company while studying — now she runs a mining empire</a></h4>
-              <a href="#" class="btn btn__secondary btn__link">
-                <i class="icon-arrow-right arrow-rounded"></i>
-                <span>Read More</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>--><!-- /.blog Grid -->
-
   <!-- ========================
       Footer
     ========================== -->
@@ -835,7 +531,7 @@
         <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-3 footer__widget footer__widget-about mb-30">
             <div class="footer__widget-content">
-              <img src="assets/images/bahlapingassets/bahlapingLogo.jpeg" alt="logo">
+              <img src="assets/images/bahlapingassets/bahlapingwhitelogo.png" alt="logo">
               <p>Bahlaping Mash is a BBBEE Level 1 black woman-owned company delivering excellence in trading, mining, and engineering projects across Southern Africa since 2016.</p>
               <a href="#" class="btn btn__primary btn__link btn__hover2">
                 <i class="icon-arrow-right arrow-rounded"></i>
@@ -945,6 +641,118 @@
   <script src="assets/js/jquery-3.3.1.min.js"></script>
   <script src="assets/js/plugins.js"></script>
   <script src="assets/js/main.js"></script>
+  <script>
+    (function() {
+      // Fix video banner: play inside container on hover/scroll, no popup
+      var videoBanner = document.getElementById('videoBanner');
+      var video = document.getElementById('bgVideo');
+      var playBtn = document.getElementById('videoPlayBtn');
+      var videoLink = document.getElementById('videoLink');
+      var isPlaying = false;
+      var playTimeout = null;
+
+      function playVideo() {
+        if (video && video.paused) {
+          video.play().then(function() {
+            isPlaying = true;
+            if (playBtn) {
+              playBtn.querySelector('i').className = 'fa fa-pause';
+            }
+          }).catch(function(e) {
+            console.log('Autoplay blocked:', e);
+          });
+        }
+      }
+
+      function pauseVideo() {
+        if (video && !video.paused) {
+          video.pause();
+          isPlaying = false;
+          if (playBtn) {
+            playBtn.querySelector('i').className = 'fa fa-play';
+          }
+        }
+      }
+
+      function toggleVideo(e) {
+        if (e) e.preventDefault();
+        if (video) {
+          if (video.paused) {
+            playVideo();
+          } else {
+            pauseVideo();
+          }
+        }
+      }
+
+      // Play on hover (mouseenter)
+      if (videoBanner) {
+        videoBanner.addEventListener('mouseenter', function() {
+          clearTimeout(playTimeout);
+          playVideo();
+        });
+        videoBanner.addEventListener('mouseleave', function() {
+          clearTimeout(playTimeout);
+          playTimeout = setTimeout(function() {
+            pauseVideo();
+          }, 500);
+        });
+      }
+
+      // Play on scroll into view (Intersection Observer)
+      if ('IntersectionObserver' in window && videoBanner) {
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              clearTimeout(playTimeout);
+              playVideo();
+            } else {
+              clearTimeout(playTimeout);
+              playTimeout = setTimeout(function() {
+                pauseVideo();
+              }, 500);
+            }
+          });
+        }, { threshold: 0.3 });
+        observer.observe(videoBanner);
+      }
+
+      // Click on play button or link toggles video (no popup)
+      if (playBtn) {
+        playBtn.addEventListener('click', toggleVideo);
+      }
+      if (videoLink) {
+        videoLink.addEventListener('click', toggleVideo);
+      }
+
+      // Ensure video is muted and loops
+      if (video) {
+        video.muted = true;
+        video.loop = true;
+        video.preload = 'metadata';
+        // If video ends, reset play button icon
+        video.addEventListener('ended', function() {
+          if (playBtn) {
+            playBtn.querySelector('i').className = 'fa fa-play';
+          }
+          isPlaying = false;
+        });
+        // If video is paused by user, update icon
+        video.addEventListener('pause', function() {
+          if (playBtn) {
+            playBtn.querySelector('i').className = 'fa fa-play';
+          }
+          isPlaying = false;
+        });
+        video.addEventListener('play', function() {
+          if (playBtn) {
+            playBtn.querySelector('i').className = 'fa fa-pause';
+          }
+          isPlaying = true;
+        });
+      }
+    })();
+  </script>
 </body>
 
 </html>
