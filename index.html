@@ -71,10 +71,13 @@
       width: 100%;
       height: 100%;
     }
-    /* hide the image placeholder completely */
+    /* hide the image placeholder completely 
     .bg-img img {
       display: none !important;
-    }
+    }*/
+    #videoBanner .bg-img img {
+    display: none !important;
+}
 
     /* Hide play button for pure autoplay video */
     #videoBanner .video__btn {
@@ -474,24 +477,24 @@
   </div><!-- /.container -->
   </section><!-- /.Services Carousel -->
 
-  <!-- =====================
-       video Banner (Sharon) – autoplay, loop, no play button
-    ======================== -->
-  <section id="videoBanner" class="video-banner video-banner-layout2 bg-overlay" style="min-height:500px; display:flex; align-items:center; position:relative;">
-    <div class="bg-img" style="position:absolute; top:0; left:0; width:100%; height:100%;">
-      <video id="bgVideo" muted playsinline preload="auto" loop autoplay style="width:100%; height:100%; object-fit:cover; z-index:0; position:absolute; top:0; left:0;">
+ <section id="videoBanner" class="video-banner-layout2">
+    <video
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        style="
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            object-fit:cover;
+        ">
         <source src="assets/images/bahlapingassets/sharonvid.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-    <div class="container" style="position:relative; z-index:2;">
-      <div class="row">
-        <div class="col-sm-12 col-md-12 col-lg-12">
-          <!-- Play button completely hidden for pure autoplay -->
-        </div><!-- /.col-lg-12 -->
-      </div><!-- /.row -->
-    </div>
-  </section><!-- /.videoBanner -->
+    </video>
+</section>
 
   <!-- ========================
       About layout 1
@@ -546,7 +549,7 @@
               <a href="tel:+27608775153" class="phone-link">
                 <i class="icon-phone"></i><span>+27 60 877 5153</span>
               </a>
-              <p>Plot 134, Bokfontein, Brits, North West, 0250 &amp; House No. 060175, Ga-chaba Village, Mapela, 0610.</p>
+              <!--<p>Plot 134, Bokfontein, Brits, North West, 0250 &amp; House No. 060175, Ga-chaba Village, Mapela, 0610.</p>-->
               <ul class="social__icons list-unstyled mt-30 mb-30">
                 <li><a href="https://www.facebook.com/profile.php?id=61550189019944"><i class="fa fa-facebook"></i></a></li>
                 
