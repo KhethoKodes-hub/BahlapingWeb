@@ -511,17 +511,32 @@
               </div><!-- /.footer-widget-content -->
             </div><!-- /.col-lg-2 -->
             <div class="col-12 col-sm-12 col-md-12 col-lg-4 footer__widget footer__widget-newsletter">
-              <div class="footer__widget-content">
-                <p>Sign up for industry alerts, our latest news, thoughts, and insights from Bahlaping Mash. You may withdraw your consent at any time!</p>
-                <form class="widget__newsletter-form">
-                  <div class="form-group mb-0">
-                    <input type="text" class="form-control" placeholder="Your Email Address">
-                    <button type="submit" class="btn">
-                      <i class="icon-arrow-right arrow-rounded"></i>
-                    </button>
-                  </div>
-                </form>
-              </div><!-- /.footer-widget-content -->
+             <div class="footer__widget-content">
+  <p>Let us get back to you! Enter your email below and our team will contact you shortly.</p>
+  
+  <form id="contactForm" action="https://formspree.io/f/YOUR_HASHID_HERE" method="POST" class="widget__newsletter-form">
+    <div class="form-group mb-0">
+      <input 
+        type="email" 
+        name="email" 
+        class="form-control" 
+        placeholder="Your Email Address" 
+        required>
+      <button type="submit" class="btn">
+        <i class="icon-arrow-right arrow-rounded"></i>
+      </button>
+    </div>
+
+    <!-- Hidden fields for better email -->
+    <input type="hidden" name="_subject" value="New Contact Request - Bahlaping Mash Website">
+    <input type="hidden" name="_next" value="https://bahlapingmash.co.za/thank-you.html">
+    <input type="hidden" name="_captcha" value="false">
+  </form>
+  
+  <small style="color:#aaa; margin-top:8px; display:block;">
+    We respect your inbox. You will be contacted within 24-48 hours.
+  </small>
+</div>
               <nav>
                 <ul class="footer__sitemap-links list-unstyled d-flex justify-content-end flex-wrap">
                   <li><a href="#">Terms &amp; Conditions</a></li>
