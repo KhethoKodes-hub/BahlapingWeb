@@ -71,6 +71,15 @@
       width: 100%;
       height: 100%;
     }
+    /* hide the image placeholder completely */
+    .bg-img img {
+      display: none !important;
+    }
+
+    /* Hide play button for pure autoplay video */
+    #videoBanner .video__btn {
+      display: none !important;
+    }
   </style>
 </head>
 
@@ -186,13 +195,13 @@
           </div><!-- /.container -->
         </div><!-- /.slide-item -->
         <div class="slide-item align-v-h bg-overlay bg-overlay-3">
-          <div class="bg-img"><img src="assets/images/bahlapingassets/team_photo18.jpg" alt="Bahlaping Mash Team" style="object-position: center 65%; width:100%; height:100%; object-fit:cover;"></div>
+          <div class="bg-img"><img src="assets/images/bahlapingassets/team_photo188.png" alt="Bahlaping Mash Team" style="object-position: center 65%; width:100%; height:100%; object-fit:cover;"></div>
           <div class="container">
             <div class="row">
               <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8">
                 <div class="slide__content">
-                  <h2 class="slide__title">Pioneering Mining &amp; Engineering Across Southern Africa</h2>
-                  <p class="slide__desc">From cable pit reticulation to chrome export, civil construction to mechanical engineering — we deliver comprehensive solutions that bridge the gender gap in industry.</p>
+                  <h2 class="slide__title">Pioneering Mining &amp; Engineering Across Africa</h2>
+                  <!--<p class="slide__desc">From cable pit reticulation to chrome export, civil construction to mechanical engineering — we deliver comprehensive solutions that bridge the gender gap in industry.</p>-->
                   <a href="#" class="btn btn__white mr-30">Our Services</a>
                   <a href="#" class="btn btn__primary btn__hover2">More About Us</a>
                 </div><!-- /.slide-content -->
@@ -200,8 +209,8 @@
             </div><!-- /.row -->
           </div><!-- /.container -->
         </div><!-- /.slide-item -->
-        <div class="slide-item align-v-h bg-overlay bg-overlay-3">
-          <div class="bg-img"><img src="assets/images/bahlapingassets/team_photo20.jpg" alt="Bahlaping Mash Team" style="object-position: center 65%; width:100%; height:100%; object-fit:cover;"></div>
+        <!--<div class="slide-item align-v-h bg-overlay bg-overlay-3">
+          <div class="bg-img"><img src="assets/images/bahlapingassets/team_photo200.png" alt="Bahlaping Mash Team" style="object-position: center 65%; width:100%; height:100%; object-fit:cover;"></div>
           <div class="container">
             <div class="row">
               <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8">
@@ -210,7 +219,7 @@
                   <p class="slide__desc">We believe in fostering strong partnerships, building sustainable infrastructures, and shaping the future through persistent innovation and dedication.</p>
                   <a href="about-us.html" class="btn btn__primary btn__hover2 mr-30">More About Us</a>
                   <a href="industries-industry-sectors.html" class="btn btn__white">Our Services</a>
-                </div><!-- /.slide-content -->
+                </div> /.slide-content -->
               </div><!-- /.col-xl-8 -->
             </div><!-- /.row -->
           </div><!-- /.container -->
@@ -235,7 +244,7 @@
           <div class="col-sm-12 col-md-10 col-lg-6 col-xl-5">
             <div class="about__img mb-50" style="padding-right:0; padding-bottom:0; margin-right:0;">
               <style>.about-layout2 .about__img::after, .about-layout2 .about__img::before { display: none !important; }</style>
-              <img src="assets/images/bahlapingassets/team_photo_9767.jpg" alt="Bahlaping Mash Team" class="img-fluid">
+              <img src="assets/images/bahlapingassets/sharonground.jpeg" alt="Bahlaping Mash Team" class="img-fluid">
             </div><!-- /.about-img -->
           </div><!-- /.col-xl-5 -->
           <div class="col-sm-12 col-md-12 col-lg-6 col-xl-5">
@@ -284,7 +293,7 @@
           <div class="col-sm-12 col-md-12 col-lg-12">
             <div class="d-flex align-items-center justify-content-center flex-wrap" style="gap: 80px; padding: 40px 0;">
               <div class="client" style="flex: 0 0 auto;">
-                <a href="#"><img src="assets/images/bahlapingassets/kumbalogo2.png" alt="De Beers Group" style="max-height: 100px; max-width: 240px; object-fit: contain;"></a>
+                <a href="#"><img src="assets/images/bahlapingassets/kumbalogo2.png" alt="De Beers Group" style="max-height: 200px; max-width: 240px; object-fit: contain;"></a>
               </div>
               <div class="client" style="flex: 0 0 auto;">
                 <a href="#"><img src="assets/images/bahlapingassets/debeerslogo.jpg" alt="Kumba Iron Ore" style="max-height: 100px; max-width: 240px; object-fit: contain;"></a>
@@ -293,7 +302,7 @@
                 <a href="#"><img src="assets/images/bahlapingassets/exxarologo.png" alt="Anglo American" style="max-height: 100px; max-width: 240px; object-fit: contain;"></a>
               </div>
               <div class="client" style="flex: 0 0 auto;">
-                <a href="#"><img src="assets/images/bahlapingassets/anglologo.jpeg" alt="Anglo American" style="max-height: 100px; max-width: 240px; object-fit: contain;"></a>
+                <a href="#"><img src="assets/images/bahlapingassets/anglologo.jpeg" alt="Anglo American" style="max-height: 150px; max-width: 240px; object-fit: contain;"></a>
               </div>
             </div>
           </div><!-- /.col-lg-12 -->
@@ -466,28 +475,19 @@
   </section><!-- /.Services Carousel -->
 
   <!-- =====================
-       video Banner
+       video Banner (Sharon) – autoplay, loop, no play button
     ======================== -->
   <section id="videoBanner" class="video-banner video-banner-layout2 bg-overlay" style="min-height:500px; display:flex; align-items:center; position:relative;">
     <div class="bg-img" style="position:absolute; top:0; left:0; width:100%; height:100%;">
-      <video id="bgVideo" muted playsinline preload="metadata" loop style="width:100%; height:100%; object-fit:cover; z-index:0; position:absolute; top:0; left:0;">
-        <source src="assets/images/bahlapingassets/bmvid.mp4" type="video/mp4">
+      <video id="bgVideo" muted playsinline preload="auto" loop autoplay style="width:100%; height:100%; object-fit:cover; z-index:0; position:absolute; top:0; left:0;">
+        <source src="assets/images/bahlapingassets/sharonvid.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
-      <img src="assets/images/bahlapingassets/bmvidIMG.png" alt="background" style="width:100%; height:100%; object-fit:cover; display:none;">
     </div>
     <div class="container" style="position:relative; z-index:2;">
       <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-12">
-          <div class="video__btn text-center">
-            <a class="popup-video" href="#" id="videoLink" style="cursor:pointer; text-decoration:none; display:inline-block;">
-              <span class="video__player-animation"></span>
-              <span class="video__player-animation video__player-animation-2"></span>
-              <div class="video__player" id="videoPlayBtn" style="cursor:pointer;">
-                <i class="fa fa-play"></i>
-              </div>
-            </a>
-          </div><!-- /.video__btn -->
+          <!-- Play button completely hidden for pure autoplay -->
         </div><!-- /.col-lg-12 -->
       </div><!-- /.row -->
     </div>
@@ -533,10 +533,10 @@
             <div class="footer__widget-content">
               <img src="assets/images/bahlapingassets/bahlapingwhitelogo.png" alt="logo">
               <p>Bahlaping Mash is a BBBEE Level 1 black woman-owned company delivering excellence in trading, mining, and engineering projects across Southern Africa since 2016.</p>
-              <a href="#" class="btn btn__primary btn__link btn__hover2">
+              <!--<a href="#" class="btn btn__primary btn__link btn__hover2">
                 <i class="icon-arrow-right arrow-rounded"></i>
                 <span>Request A Quote</span>
-              </a>
+              </a>-->
             </div>
           </div><!-- /.col-lg-4 -->
           <div class="col-sm-6 col-md-6 col-lg-3 footer__widget footer__widget-text">
@@ -551,6 +551,7 @@
                 <li><a href="https://www.facebook.com/profile.php?id=61550189019944"><i class="fa fa-facebook"></i></a></li>
                 
                 <li><a href="https://www.instagram.com/bahlaping_mash/"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="https://www.linkedin.com/company/bahlaping-mash-trading-mining-and-projects/"><i class="fa fa-linkedin"></i></a></li>
               </ul>
             </div><!-- /.footer-widget-content -->
           </div><!-- /.col-lg-3 -->
@@ -560,7 +561,6 @@
               <nav>
                 <ul class="list-unstyled">
                   <li><a href="about-us.html">About Us</a></li>
-                  <li><a href="about-us.html#blogGrid">News &amp; Media</a></li>
                   <li><a href="contacs.html">Contact Us</a></li>
                 </ul>
               </nav>
@@ -643,112 +643,16 @@
   <script src="assets/js/main.js"></script>
   <script>
     (function() {
-      // Fix video banner: play inside container on hover/scroll, no popup
-      var videoBanner = document.getElementById('videoBanner');
       var video = document.getElementById('bgVideo');
-      var playBtn = document.getElementById('videoPlayBtn');
-      var videoLink = document.getElementById('videoLink');
-      var isPlaying = false;
-      var playTimeout = null;
-
-      function playVideo() {
-        if (video && video.paused) {
-          video.play().then(function() {
-            isPlaying = true;
-            if (playBtn) {
-              playBtn.querySelector('i').className = 'fa fa-pause';
-            }
-          }).catch(function(e) {
-            console.log('Autoplay blocked:', e);
-          });
-        }
-      }
-
-      function pauseVideo() {
-        if (video && !video.paused) {
-          video.pause();
-          isPlaying = false;
-          if (playBtn) {
-            playBtn.querySelector('i').className = 'fa fa-play';
-          }
-        }
-      }
-
-      function toggleVideo(e) {
-        if (e) e.preventDefault();
-        if (video) {
-          if (video.paused) {
-            playVideo();
-          } else {
-            pauseVideo();
-          }
-        }
-      }
-
-      // Play on hover (mouseenter)
-      if (videoBanner) {
-        videoBanner.addEventListener('mouseenter', function() {
-          clearTimeout(playTimeout);
-          playVideo();
-        });
-        videoBanner.addEventListener('mouseleave', function() {
-          clearTimeout(playTimeout);
-          playTimeout = setTimeout(function() {
-            pauseVideo();
-          }, 500);
-        });
-      }
-
-      // Play on scroll into view (Intersection Observer)
-      if ('IntersectionObserver' in window && videoBanner) {
-        var observer = new IntersectionObserver(function(entries) {
-          entries.forEach(function(entry) {
-            if (entry.isIntersecting) {
-              clearTimeout(playTimeout);
-              playVideo();
-            } else {
-              clearTimeout(playTimeout);
-              playTimeout = setTimeout(function() {
-                pauseVideo();
-              }, 500);
-            }
-          });
-        }, { threshold: 0.3 });
-        observer.observe(videoBanner);
-      }
-
-      // Click on play button or link toggles video (no popup)
-      if (playBtn) {
-        playBtn.addEventListener('click', toggleVideo);
-      }
-      if (videoLink) {
-        videoLink.addEventListener('click', toggleVideo);
-      }
-
-      // Ensure video is muted and loops
+      
       if (video) {
         video.muted = true;
         video.loop = true;
-        video.preload = 'metadata';
-        // If video ends, reset play button icon
-        video.addEventListener('ended', function() {
-          if (playBtn) {
-            playBtn.querySelector('i').className = 'fa fa-play';
-          }
-          isPlaying = false;
-        });
-        // If video is paused by user, update icon
-        video.addEventListener('pause', function() {
-          if (playBtn) {
-            playBtn.querySelector('i').className = 'fa fa-play';
-          }
-          isPlaying = false;
-        });
-        video.addEventListener('play', function() {
-          if (playBtn) {
-            playBtn.querySelector('i').className = 'fa fa-pause';
-          }
-          isPlaying = true;
+        video.playsInline = true;
+        
+        // Force autoplay
+        video.play().catch(function(e) {
+          console.log('Autoplay prevented by browser:', e);
         });
       }
     })();
